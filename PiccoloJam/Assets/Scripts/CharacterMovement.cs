@@ -19,6 +19,9 @@ public class CharacterMovement : MonoBehaviour {
 	//jump
 	public bool grounded = false;
 	public float jumpForce = 365f;
+	//debug
+
+
 
 	void Start()
 	{
@@ -34,14 +37,21 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Update () 
 	{
-		haxis.Add(Input.GetAxisRaw("Horizontal"));
 
-		vaxis.Add(Input.GetAxis("Vertical"));
+		Debug.Log("Vertical" + vaxis.Count);
+			Debug.Log("horizontal" + haxis.Count);
+
 	}
 
 	void FixedUpdate()
 	{
 		{
+			haxis.Add(Input.GetAxisRaw("Horizontal"));
+			
+			vaxis.Add(Input.GetAxis("Vertical"));
+
+
+
 			currentHAxis = haxis [1];
 
 				//movimento
