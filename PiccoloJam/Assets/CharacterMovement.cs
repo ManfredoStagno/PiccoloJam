@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
 
+
 	//time and input delay Variables
+
 	public float delay = 5f;
 	List <float> haxis = new List<float>();
 	List <float> vaxis = new List<float>();
@@ -14,9 +16,15 @@ public class CharacterMovement : MonoBehaviour {
 	//movement and controller variables
 	public float currentHAxis;
 	public float currentVAxis;
+
 	public float moveForce = 365f;
+
 	public float maxSpeed = 5f;
-	public Rigidbody2D rb2d;
+	private Rigidbody2D rb2d;
+
+	//jump
+	public Transform groundCheck;
+	private bool grounded = false;
 
 	void Start()
 	{
@@ -34,6 +42,7 @@ public class CharacterMovement : MonoBehaviour {
 	{
 		haxis.Add(Input.GetAxisRaw("Horizontal"));
 		vaxis.Add(Input.GetAxisRaw("Vertical"));
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 	}
 
 	void FixedUpdate()
@@ -51,18 +60,20 @@ public class CharacterMovement : MonoBehaviour {
 
 			haxis.RemoveAt(1);
 		}
+		if(grounded==true)
 		{
 			currentVAxis = vaxis [1];
 
 			//movimento
 			if (rb2d.velocity.y * currentVAxis < maxSpeed) 
 				rb2d.AddForce (Vector2.up * currentVAxis * moveForce);
+			Debug.Log ("Jumping");
 
-			if (Mathf.Abs (rb2d.velocity.y) > maxSpeed)
+			if (rb2d.velocity.y > maxSpeed)
 				rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Sign (rb2d.velocity.y) * maxSpeed);
 			//movimento
-
 			vaxis.RemoveAt(1);
+			Debug.Log ("Bouncing");
 		}
 	}
 }
