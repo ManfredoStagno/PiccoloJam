@@ -23,8 +23,8 @@ public class CharacterMovement : MonoBehaviour {
 	private Rigidbody2D rb2d;
 
 	//jump
-	public Transform groundCheck;
-	private bool grounded = false;
+//	public Transform groundCheck;
+	public bool grounded = false;
 
 	void Start()
 	{
@@ -37,12 +37,27 @@ public class CharacterMovement : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D coll)
+	{
+		if (coll.gameObject.CompareTag ("Ground")) 
+		{
+			grounded = true;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D coll)
+	{
+		if (coll.gameObject.CompareTag ("Ground")) 
+		{
+			grounded = false;
+		}
+	}
 
 	void Update () 
 	{
 		haxis.Add(Input.GetAxisRaw("Horizontal"));
 		vaxis.Add(Input.GetAxisRaw("Vertical"));
-		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+		//grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("ground"));
 	}
 
 	void FixedUpdate()
@@ -60,7 +75,6 @@ public class CharacterMovement : MonoBehaviour {
 
 			haxis.RemoveAt(1);
 		}
-		if(grounded==true)
 		{
 			currentVAxis = vaxis [1];
 
