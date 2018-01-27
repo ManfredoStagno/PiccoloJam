@@ -210,7 +210,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 57176285}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7b637053ebd54e44289366b935597372, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -238,13 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689999b9d98bd2f45a4598b00cf5ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   delay: 2
-  isPressed: 0
-  timePressed: 0
-  axis: 0
-  moveForce: 500
-  maxSpeed: 1
+  currentAxis: 0
+  moveForce: 50
+  maxSpeed: 3
   rb2d: {fileID: 0}
 --- !u!1 &661900200
 GameObject:
@@ -271,7 +268,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 661900200}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 35505c4e0a45ec74cbe9fd4987520ce3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
