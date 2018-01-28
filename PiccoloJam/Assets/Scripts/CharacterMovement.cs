@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour {
 	public Transform cameraTransform;
 
 
-	private AudioManager audioManager;
+	public AudioManager audioManager;
 	private AudioSource audioSource;
 	private Death death;
 	//time and input delay Variables
@@ -33,7 +33,7 @@ public class CharacterMovement : MonoBehaviour {
 
 
 
-	void PlayOneShit(AudioClip clip)
+	public void PlayOneShit(AudioClip clip)
 	{	
 		audioSource.clip = clip;
 		audioSource.Play();
@@ -104,6 +104,9 @@ public class CharacterMovement : MonoBehaviour {
 		if(grounded == true)
 		{
 			currentVAxis = vaxis [1];
+
+			if (currentVAxis == 1)
+				PlayOneShit (audioManager.output);
 
 			//movimento
 			if (rb2d.velocity.y * currentVAxis < maxSpeed) 

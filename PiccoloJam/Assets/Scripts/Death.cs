@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour{
 
+	private CharacterMovement characterMovement;
 	private Animator anim;
 	private float DeathTime;
 	private bool died = false;
@@ -14,6 +15,7 @@ public class Death : MonoBehaviour{
 	void Start () {
 
 		anim = GetComponent<Animator> ();
+		characterMovement = GetComponent<CharacterMovement> ();
 
 	}
 	
@@ -32,6 +34,7 @@ public class Death : MonoBehaviour{
 	{
 		died = true;
 		anim.Play("Death");
+		characterMovement.PlayOneShit (characterMovement.audioManager.gameOver);
 		Debug.Log ("morto");
 		DeathTime = Time.time;
 	}

@@ -13,14 +13,14 @@ public class AudioManager : MonoBehaviour {
 	}
 
 
-	public AudioClip input;
-	public AudioClip output;
+	public AudioClip input;//
+	public AudioClip output;//
 	public AudioClip transmission;
 	public AudioClip endLevel;
 	public AudioClip walk;
-	public AudioClip jump;
-	public AudioClip grounded;
-	public AudioClip gameOver;
+	public AudioClip jump;//
+	public AudioClip grounded;//
+	public AudioClip gameOver;   // 
 
 	public AudioClip menu;
 
