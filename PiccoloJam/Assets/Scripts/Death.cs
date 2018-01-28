@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Death : MonoBehaviour{
 
 	private CharacterMovement characterMovement;
-	private Animator anim;
+	public Animator anim;
 	private float DeathTime;
 	private bool died = false;
 	// Use this for initialization
@@ -33,7 +33,7 @@ public class Death : MonoBehaviour{
 
 	{
 		died = true;
-		anim.Play("Death");
+		anim.SetInteger("transizione", 3);
 		characterMovement.PlayOneShit (characterMovement.audioManager.gameOver);
 		Debug.Log ("morto");
 		DeathTime = Time.time;

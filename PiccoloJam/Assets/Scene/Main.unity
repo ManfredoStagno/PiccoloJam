@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bc99bbbfc38804ba919d8c5edde56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 57176294}
 --- !u!95 &57176294
 Animator:
   serializedVersion: 3
@@ -780,6 +781,10 @@ Prefab:
     - target: {fileID: 4156530292514000, guid: cfb8b6d2b71b14bbf9382c764133170e, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549072030759830, guid: cfb8b6d2b71b14bbf9382c764133170e, type: 2}
+      propertyPath: m_TagString
+      value: InstantDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfb8b6d2b71b14bbf9382c764133170e, type: 2}
