@@ -120,6 +120,8 @@ GameObject:
   - component: {fileID: 57176288}
   - component: {fileID: 57176290}
   - component: {fileID: 57176289}
+  - component: {fileID: 57176292}
+  - component: {fileID: 57176291}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -176,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57176285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0.032, y: 1.203, z: 0}
   m_LocalScale: {x: 0.30716312, y: 0.30716312, z: 0.30716312}
   m_Children:
   - {fileID: 356822432}
@@ -239,6 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689999b9d98bd2f45a4598b00cf5ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSource: {fileID: 0}
   delay: 0.75
   currentHAxis: 0
   currentVAxis: 0
@@ -246,6 +250,107 @@ MonoBehaviour:
   maxSpeed: 3
   grounded: 0
   jumpForce: 400
+--- !u!114 &57176291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 57176285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3bca3df3b898b4a95ccda9007ba3d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  input: {fileID: 8300000, guid: 687aba22b4acb454bacff96f6891e8fb, type: 3}
+  output: {fileID: 8300000, guid: 05f9ccaed633b46c29b1f757c2effd2e, type: 3}
+  transmission: {fileID: 8300000, guid: 4615e1ae716df4bafbdf92fe98a00504, type: 3}
+  endLevel: {fileID: 8300000, guid: 68b3c24282abe45708115752d7db02be, type: 3}
+  walk: {fileID: 8300000, guid: b4fba870cd7234e479caf5760432c5ed, type: 3}
+  jump: {fileID: 0}
+  grounded: {fileID: 8300000, guid: 68cc736a01a4a452998dbe7770f73fbb, type: 3}
+  gameOver: {fileID: 8300000, guid: 27f5965dc238a44b6a90332d4fa049b6, type: 3}
+  menu: {fileID: 0}
+--- !u!82 &57176292
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 57176285}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &356822431
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +391,7 @@ GameObject:
   - component: {fileID: 403019887}
   m_Layer: 0
   m_Name: boxbasecroppata (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +574,7 @@ GameObject:
   - component: {fileID: 896647789}
   m_Layer: 0
   m_Name: boxbasecroppata (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,7 +671,7 @@ GameObject:
   - component: {fileID: 918844092}
   m_Layer: 0
   m_Name: boxbasecroppata (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -889,6 +994,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1549072030759830, guid: cfb8b6d2b71b14bbf9382c764133170e, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfb8b6d2b71b14bbf9382c764133170e, type: 2}
   m_IsPrefabParent: 0
@@ -904,7 +1013,7 @@ GameObject:
   - component: {fileID: 1430778434}
   m_Layer: 0
   m_Name: boxbasecroppata (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1001,7 +1110,7 @@ GameObject:
   - component: {fileID: 1517030024}
   m_Layer: 0
   m_Name: boxbasecroppata (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1160,7 +1269,7 @@ GameObject:
   - component: {fileID: 1781611049}
   m_Layer: 0
   m_Name: boxbasecroppata (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1257,7 +1366,7 @@ GameObject:
   - component: {fileID: 1847471949}
   m_Layer: 0
   m_Name: boxbasecroppata (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
