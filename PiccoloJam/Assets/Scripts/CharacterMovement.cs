@@ -138,6 +138,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (coll.gameObject.CompareTag ("InstantDeath")) 
 		{
 			death.InstaDeath();
+			Debug.Log ("Collido");
 		}
 	}
 	

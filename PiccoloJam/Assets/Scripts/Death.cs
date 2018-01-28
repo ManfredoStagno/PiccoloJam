@@ -23,14 +23,16 @@ public class Death : MonoBehaviour{
 		if (Time.time >= DeathTime + 3 && died == true ) 
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-				}
+			Debug.Log ("carico scena");	
+		}
 	}
 
 	public void InstaDeath ()
 
 	{
 		died = true;
-		anim.Play("Death"); 
+		anim.Play("Death");
+		Debug.Log ("morto");
 		DeathTime = Time.time;
 	}
 }
