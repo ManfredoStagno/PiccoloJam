@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour {
 
+
+	//audiomanager
+	public AudioManager audioManager;
+	public AudioSource audioSource;
 	//time and input delay Variables
 	public float delay = 5f;
 	List <float> haxis = new List<float>();
@@ -26,6 +30,8 @@ public class CharacterMovement : MonoBehaviour {
 	void Start()
 	{
 		rb2d = GetComponent<Rigidbody2D>();
+		audioManager = GetComponent<AudioManager> ();
+		audioSource = GetComponent<AudioSource> ();
 
 		for (int i = 0; i < delay*50; i++) 
 		{
@@ -38,8 +44,7 @@ public class CharacterMovement : MonoBehaviour {
 	void Update () 
 	{
 
-		Debug.Log("Vertical" + vaxis.Count);
-			Debug.Log("horizontal" + haxis.Count);
+		//if (Input.GetButtonDown(KeyCode.UpArrow) || (Input.GetButtonDown(KeyCode.RightArrow) ||(Input.GetButtonDown(KeyCode.LeftArrow)
 
 	}
 
@@ -107,7 +112,9 @@ public class CharacterMovement : MonoBehaviour {
 		if (coll.gameObject.CompareTag ("Ground")) 
 		{
 			grounded = true;
+			PlayOneShit (audioManager.grounded);
 		}
+
 		if (coll.gameObject.CompareTag ("InstantDeath")) 
 		{
 			Death();
@@ -124,7 +131,14 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Death()
 	{
-		
 	}
+		
+	void PlayOneShit(AudioClip clip)
+	{	
+		audioSource.clip = clip;
+		audioSource.Play();
+	}
+
+
 
 }
