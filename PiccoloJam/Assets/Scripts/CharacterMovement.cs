@@ -61,13 +61,14 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 
-	void Update () 
+	void Update ()
 	{
-
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow))
-		{spawnParticle ();}
+		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow)) 
+		{
+			spawnParticle (); 
+			PlayOneShit (audioManager.input);
+		}
 	}
-
 	void FixedUpdate()
 	{
 		{
