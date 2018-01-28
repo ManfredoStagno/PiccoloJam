@@ -52,7 +52,6 @@ public class CharacterMovement : MonoBehaviour {
 		death = GetComponent<Death> ();
 		cameraTransform = camera.transform;
 
-
 		for (int i = 0; i < delay*50; i++) 
 		{
 			haxis.Add (0);
@@ -68,6 +67,21 @@ public class CharacterMovement : MonoBehaviour {
 			spawnParticle (); 
 			PlayOneShit (audioManager.input);
 		}
+
+
+		if (grounded) 
+		{
+			//set to jump
+		}
+		else
+		{if (Mathf.Abs (rb2d.velocity.x) > 0.1)
+		{
+			////////////////////////set animation to walk
+			}
+		else
+		{
+			//setanimation to idle
+		}}
 	}
 
 	void FixedUpdate()
