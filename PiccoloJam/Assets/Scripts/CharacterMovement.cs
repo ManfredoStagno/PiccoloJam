@@ -11,6 +11,8 @@ public class CharacterMovement : MonoBehaviour {
 	new public GameObject camera;
 	public Transform cameraTransform;
 
+	public Animator anim;
+
 
 	public AudioManager audioManager;
 	private AudioSource audioSource;
@@ -46,8 +48,10 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Start()
 	{
+		
 		rb2d = GetComponent<Rigidbody2D>();
 		audioManager = GetComponent<AudioManager> ();
+		anim = GetComponent<Animator> ();
 		audioSource = GetComponent<AudioSource> ();
 		death = GetComponent<Death> ();
 		cameraTransform = camera.transform;
@@ -57,6 +61,8 @@ public class CharacterMovement : MonoBehaviour {
 			haxis.Add (0);
 			vaxis.Add (0);
 		}
+
+		anim.SetInteger ("transizione", 0);
 	}
 
 
@@ -69,18 +75,18 @@ public class CharacterMovement : MonoBehaviour {
 		}
 
 
-		if (grounded) 
+		if (grounded == false) 
 		{
-			//set to jump
+			anim.SetInteger ("transizione", 2);
 		}
 		else
 		{if (Mathf.Abs (rb2d.velocity.x) > 0.1)
 		{
-			////////////////////////set animation to walk
+				anim.SetInteger ("transizione", 1);
 			}
 		else
 		{
-			//setanimation to idle
+			anim.SetInteger ("transizione", 0);
 		}}
 	}
 
