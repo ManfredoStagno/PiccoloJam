@@ -9,7 +9,7 @@ public class Death : MonoBehaviour{
 
 	private Animator anim;
 	private float DeathTime;
-
+	private bool died = false;
 	// Use this for initialization
 	void Start () {
 
@@ -20,7 +20,7 @@ public class Death : MonoBehaviour{
 	// Update is called once per frame
 	void Update () {
 
-		if (Time.time >= DeathTime + 3) 
+		if (Time.time >= DeathTime + 3 && died == true ) 
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 				}
@@ -29,6 +29,7 @@ public class Death : MonoBehaviour{
 	public void InstaDeath ()
 
 	{
+		died = true;
 		anim.Play("Death"); 
 		DeathTime = Time.time;
 	}
