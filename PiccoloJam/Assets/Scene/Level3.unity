@@ -162,9 +162,9 @@ Transform:
   - {fileID: 758455884}
   - {fileID: 1420715506}
   - {fileID: 1678212010}
-  - {fileID: 1801426104}
   - {fileID: 1094459170}
   - {fileID: 1535816430}
+  - {fileID: 1801426104}
   - {fileID: 1045848135}
   - {fileID: 1162615390}
   - {fileID: 1463399096}
@@ -380,6 +380,7 @@ MonoBehaviour:
   particle: {fileID: 2083995504}
   camera: {fileID: 8568452}
   cameraTransform: {fileID: 0}
+  anim: {fileID: 0}
   audioManager: {fileID: 0}
   delay: 1.2
   currentHAxis: 0
@@ -501,6 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bc99bbbfc38804ba919d8c5edde56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!95 &57176294
 Animator:
   serializedVersion: 3
@@ -730,6 +732,10 @@ Prefab:
     - target: {fileID: 1556960809843006, guid: 69152080e860b4f938552dbceca44223, type: 2}
       propertyPath: m_Name
       value: laser strart_0 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556960809843006, guid: 69152080e860b4f938552dbceca44223, type: 2}
+      propertyPath: m_TagString
+      value: InstantDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69152080e860b4f938552dbceca44223, type: 2}
@@ -2269,6 +2275,10 @@ Prefab:
     - target: {fileID: 1556960809843006, guid: 69152080e860b4f938552dbceca44223, type: 2}
       propertyPath: m_Name
       value: laser strart_0 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556960809843006, guid: 69152080e860b4f938552dbceca44223, type: 2}
+      propertyPath: m_TagString
+      value: InstantDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69152080e860b4f938552dbceca44223, type: 2}
