@@ -28,6 +28,7 @@ public class CharacterMovement : MonoBehaviour {
 	//jump
 	public bool grounded = false;
 	public float jumpForce = 365f;
+	public float maxJump = 10;
 	//debug
 
 
@@ -40,7 +41,6 @@ public class CharacterMovement : MonoBehaviour {
 
 	void spawnParticle()
 	{
-		
 		Destroy (Instantiate (particle, cameraTransform), 3);
 	}
 
@@ -64,12 +64,8 @@ public class CharacterMovement : MonoBehaviour {
 	void Update () 
 	{
 
-		//if (Input.GetButtonDown(KeyCode.UpArrow) || (Input.GetButtonDown(KeyCode.RightArrow) ||(Input.GetButtonDown(KeyCode.LeftArrow)
-		if (Input.GetKeyDown("space"))
-			{
-				Debug.Log("SPACE");
-				spawnParticle();
-			}
+		if (Input.GetButtonDown (KeyCode.UpArrow)) ||( Input.GetButtonDown (KeyCode.RightArrow) )|| (Input.GetButtonDown (KeyCode.LeftArrow))
+			spawnParticle ();
 	}
 
 	void FixedUpdate()
@@ -112,8 +108,8 @@ public class CharacterMovement : MonoBehaviour {
 				rb2d.AddForce (Vector2.up * currentVAxis * jumpForce);
 		
 
-			if (rb2d.velocity.y > maxSpeed)
-				rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Sign (rb2d.velocity.y) * maxSpeed);
+			if (rb2d.velocity.y > maxJump)
+				rb2d.velocity = new Vector2(rb2d.velocity.x, Mathf.Sign (rb2d.velocity.y) * maxJump);
 			//movimento
 		}
 		vaxis.RemoveAt(1);
