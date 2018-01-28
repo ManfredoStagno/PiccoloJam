@@ -239,8 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689999b9d98bd2f45a4598b00cf5ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 0}
-  audioSource: {fileID: 0}
+  particle: {fileID: 0}
   delay: 0.75
   currentHAxis: 0
   currentVAxis: 0
