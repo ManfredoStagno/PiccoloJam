@@ -69,22 +69,23 @@ public class CharacterMovement : MonoBehaviour {
 			PlayOneShit (audioManager.input);
 		}
 	}
+
 	void FixedUpdate()
 	{
 		{
 			haxis.Add(Input.GetAxisRaw("Horizontal"));
 			
-			vaxis.Add(Input.GetAxis("Vertical"));
+			//vaxis.Add(Input.GetAxis("Vertical"));
 			//TODO if button is already pressed return 0, if button has just been pressed return 1
 
-//			if (Input.GetKeyDown (KeyCode.UpArrow)) 
-//			{
-//				vaxis.Add (1);
-//			} 
-//			else
-//			{
-//				vaxis.Add (0);
-//			}
+			if (Input.GetKeyDown (KeyCode.UpArrow)) 
+			{
+				vaxis.Add (1);
+			} 
+			else
+			{
+				vaxis.Add (0);
+			}
 
 
 
