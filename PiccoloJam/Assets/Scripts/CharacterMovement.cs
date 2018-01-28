@@ -64,8 +64,8 @@ public class CharacterMovement : MonoBehaviour {
 	void Update () 
 	{
 
-		if (Input.GetButtonDown (KeyCode.UpArrow)) ||( Input.GetButtonDown (KeyCode.RightArrow) )|| (Input.GetButtonDown (KeyCode.LeftArrow))
-			spawnParticle ();
+		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow))
+		{spawnParticle ();}
 	}
 
 	void FixedUpdate()
