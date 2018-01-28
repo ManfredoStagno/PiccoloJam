@@ -43,8 +43,15 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Update () 
 	{
-
-		//if (Input.GetButtonDown(KeyCode.UpArrow) || (Input.GetButtonDown(KeyCode.RightArrow) ||(Input.GetButtonDown(KeyCode.LeftArrow)
+//		if (transform.velocity.x != 0)
+//		{
+//			PlayOneShit(audioManager.walk);
+//		}
+//
+//		if (Input.GetButtonDown(KeyCode.UpArrow) || (Input.GetButtonDown(KeyCode.RightArrow) ||Input.GetButtonDown(KeyCode.LeftArrow))
+//			{
+//				PlayOneShit(audioManager.input);
+//			}
 
 	}
 
@@ -53,7 +60,7 @@ public class CharacterMovement : MonoBehaviour {
 		{
 			haxis.Add(Input.GetAxisRaw("Horizontal"));
 			
-			vaxis.Add(Input.GetAxis("Vertical"));
+			vaxis.Add(Input.GetAxisRaw("Vertical"));
 			//TODO if button is already pressed return 0, if button has just been pressed return 1
 
 //			if (Input.GetKeyDown (KeyCode.UpArrow)) 
@@ -126,11 +133,13 @@ public class CharacterMovement : MonoBehaviour {
 		if (coll.gameObject.CompareTag ("Ground")) 
 		{
 			grounded = false;
+			PlayOneShit (audioManager.jump);
 		}
 	}
 
 	void Death()
 	{
+		PlayOneShit (audioManager.gameOver);
 	}
 		
 	void PlayOneShit(AudioClip clip)
