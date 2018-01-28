@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour {
 	
@@ -146,12 +147,6 @@ public class CharacterMovement : MonoBehaviour {
 
 
 
-
-
-
-
-
-
 	void OnCollisionEnter2D(Collision2D coll)
 	{
 		if (coll.gameObject.CompareTag ("Ground")) 
@@ -160,11 +155,7 @@ public class CharacterMovement : MonoBehaviour {
 			PlayOneShit (audioManager.grounded);
 		}
 
-		if (coll.gameObject.CompareTag ("InstantDeath")) 
-		{
-			death.InstaDeath();
-			Debug.Log ("Collido");
-		}
+
 	}
 
 	void OnCollisionExit2D(Collision2D coll)
@@ -175,7 +166,20 @@ public class CharacterMovement : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D (Collider2D coll)
+	{
+		if (coll.gameObject.CompareTag ("InstantDeath")) 
+		{
+			death.InstaDeath();
+			Debug.Log ("Collido");
+		}
 
+		if (coll.CompareTag("NextScene"))
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+			}
+			
+	}
 
 
 
