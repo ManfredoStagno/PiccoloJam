@@ -43,27 +43,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ui
-    uniqueID: 4230274123
+  - name: BackGround
+    uniqueID: 1870344791
     locked: 0
-  - name: UI2
-    uniqueID: 2893879635
-    locked: 0
-  - name: Player
-    uniqueID: 4208675567
+  - name: Ground
+    uniqueID: 47895525
     locked: 0
   - name: Enemy
-    uniqueID: 1256878015
+    uniqueID: 2137827927
     locked: 0
   - name: Player
     uniqueID: 2858937129
     locked: 0
   - name: Enemy
-    uniqueID: 2137827927
+    uniqueID: 1256878015
     locked: 0
-  - name: Ground
-    uniqueID: 47895525
+  - name: Player
+    uniqueID: 4208675567
     locked: 0
-  - name: BackGround
-    uniqueID: 1870344791
+  - name: UI2
+    uniqueID: 2893879635
+    locked: 0
+  - name: Ui
+    uniqueID: 4230274123
     locked: 0
