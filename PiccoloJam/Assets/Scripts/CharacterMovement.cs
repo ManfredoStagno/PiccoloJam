@@ -62,7 +62,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow)) 
+		if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow)) 
 		{
 			spawnParticle (); 
 			PlayOneShit (audioManager.input);
@@ -92,7 +92,7 @@ public class CharacterMovement : MonoBehaviour {
 			//vaxis.Add(Input.GetAxis("Vertical"));
 			//TODO if button is already pressed return 0, if button has just been pressed return 1
 
-			if (Input.GetKeyDown (KeyCode.UpArrow)) 
+			if (Input.GetKey (KeyCode.UpArrow)) 
 			{
 				vaxis.Add (1);
 			} 
