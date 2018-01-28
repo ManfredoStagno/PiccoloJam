@@ -108,6 +108,11 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8568452 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1792337147231988, guid: 15ac59ed68cfa4f3fac952cec710d717,
+    type: 2}
+  m_PrefabInternal: {fileID: 891711060}
 --- !u!1 &40578797
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689999b9d98bd2f45a4598b00cf5ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 0}
+  particle: {fileID: 2083995504}
+  camera: {fileID: 8568452}
+  cameraTransform: {fileID: 0}
   delay: 0.75
   currentHAxis: 0
   currentVAxis: 0
@@ -429,7 +436,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4478620678594024, guid: c6f902146d021634dbe6e7a6c9f33e1f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.64726734
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4478620678594024, guid: c6f902146d021634dbe6e7a6c9f33e1f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1184,3 +1191,8 @@ Transform:
   m_Father: {fileID: 40578798}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2083995504 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1923787641632354, guid: 15ac59ed68cfa4f3fac952cec710d717,
+    type: 2}
+  m_PrefabInternal: {fileID: 891711060}

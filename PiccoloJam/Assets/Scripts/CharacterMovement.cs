@@ -8,6 +8,10 @@ using UnityEngine.UI;
 public class CharacterMovement : MonoBehaviour {
 	
 	public GameObject particle;
+	new public GameObject camera;
+	public Transform cameraTransform;
+
+
 	private AudioManager audioManager;
 	private AudioSource audioSource;
 	private Death death;
@@ -36,9 +40,8 @@ public class CharacterMovement : MonoBehaviour {
 
 	void spawnParticle()
 	{
-
-		Instantiate (particle);
-
+		
+		Destroy (Instantiate (particle, cameraTransform), 3);
 	}
 
 	void Start()
@@ -47,6 +50,7 @@ public class CharacterMovement : MonoBehaviour {
 		audioManager = GetComponent<AudioManager> ();
 		audioSource = GetComponent<AudioSource> ();
 		death = GetComponent<Death> ();
+		cameraTransform = camera.transform;
 
 
 		for (int i = 0; i < delay*50; i++) 
