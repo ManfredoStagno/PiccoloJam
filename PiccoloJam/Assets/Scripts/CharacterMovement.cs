@@ -141,7 +141,7 @@ public class CharacterMovement : MonoBehaviour {
 			Debug.Log ("Collido");
 		}
 	}
-	
+
 	void OnCollisionExit2D(Collision2D coll)
 	{
 		if (coll.gameObject.CompareTag ("Ground")) 

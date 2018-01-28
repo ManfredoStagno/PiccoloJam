@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 57176292}
   - component: {fileID: 57176293}
   - component: {fileID: 57176291}
+  - component: {fileID: 57176294}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -398,6 +399,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bc99bbbfc38804ba919d8c5edde56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &57176294
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 57176285}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43fa97b821685374d9588da7725ca2bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &86760345
 Prefab:
   m_ObjectHideFlags: 0
@@ -446,6 +464,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.x
       value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 61558566799670506, guid: c6f902146d021634dbe6e7a6c9f33e1f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6f902146d021634dbe6e7a6c9f33e1f, type: 2}
@@ -1240,6 +1263,10 @@ Prefab:
     - target: {fileID: 4909214275130096, guid: 93f137e74b6b05541806ab6edf5e19e5, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266687111907324, guid: 93f137e74b6b05541806ab6edf5e19e5, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93f137e74b6b05541806ab6edf5e19e5, type: 2}
